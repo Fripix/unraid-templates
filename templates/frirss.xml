@@ -6,7 +6,7 @@
   <Network>bridge</Network>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
-  <Support>https://github.com/Fripix/Frirss/discussions</Support>
+  <Support>https://forums.unraid.net/topic/200170-support-frirss-a-customizable-web-frontend-for-freshrss</Support>
   <Project>https://github.com/Fripix/Frirss</Project>
   <Overview>FriRSS is a modern, self-hosted, customizable web frontend for FreshRSS. It provides a desktop interface and mobile PWA, full-text extraction, offline reading, multiple languages, themes and extensive interface customization.</Overview>
   <Category>Productivity:</Category>
