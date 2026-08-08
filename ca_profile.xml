@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CommunityApplications>
+  <Profile>
+    Unraid Community Applications templates maintained by Fripix. Currently providing FriRSS, a modern, self-hosted and customizable web frontend for FreshRSS.
+  </Profile>
+  <Icon>https://raw.githubusercontent.com/Fripix/Frirss/main/public/pwa-icon.png</Icon>
+  <WebPage>https://github.com/Fripix/Frirss</WebPage>
+  <Forum>https://forums.unraid.net/topic/200170-support-frirss-a-customizable-web-frontend-for-freshrss/</Forum>
+</CommunityApplications>
