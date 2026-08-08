@@ -29,7 +29,7 @@
           Type="Port"
           Display="always"
           Required="true"
-          Mask="false">8080</Config>
+          Mask="false">8787</Config>
 
   <!-- Persistent data -->
   <Config Name="App Data"
