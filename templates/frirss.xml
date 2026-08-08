@@ -1,0 +1,127 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>FriRSS</Name>
+  <Repository>ghcr.io/fripix/frirss:latest</Repository>
+  <Registry>https://github.com/Fripix/Frirss/pkgs/container/frirss</Registry>
+
+  <Network>bridge</Network>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+
+  <Support>https://github.com/Fripix/Frirss/discussions</Support>
+  <Project>https://github.com/Fripix/Frirss</Project>
+
+  <Overview>FriRSS is a modern, self-hosted, customizable web frontend for FreshRSS. It provides a desktop interface and mobile PWA, full-text extraction, offline reading, multiple languages, themes and extensive interface customization.</Overview>
+
+  <Category>Productivity:</Category>
+
+  <WebUI>http://[IP]:[PORT:80]</WebUI>
+
+  <TemplateURL>https://raw.githubusercontent.com/Fripix/unraid-templates/main/templates/frirss.xml</TemplateURL>
+
+  <Icon>https://raw.githubusercontent.com/Fripix/Frirss/main/public/pwa-icon.png</Icon>
+
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+
+  <DonateText/>
+  <DonateLink/>
+
+  <Requires>A running FreshRSS instance is required.</Requires>
+
+  <!-- Web interface -->
+  <Config Name="WebUI Port"
+          Target="80"
+          Default="8080"
+          Mode="tcp"
+          Description="Port used to access the FriRSS web interface."
+          Type="Port"
+          Display="always"
+          Required="true"
+          Mask="false">8080</Config>
+
+  <!-- Persistent data -->
+  <Config Name="App Data"
+          Target="/app/data"
+          Default="/mnt/user/appdata/frirss"
+          Mode="rw"
+          Description="Persistent FriRSS data, including the SQLite database."
+          Type="Path"
+          Display="always"
+          Required="true"
+          Mask="false">/mnt/user/appdata/frirss</Config>
+
+  <!-- Standard environment -->
+  <Config Name="NODE_ENV"
+          Target="NODE_ENV"
+          Default="production"
+          Mode=""
+          Description="Node.js environment."
+          Type="Variable"
+          Display="advanced"
+          Required="true"
+          Mask="false">production</Config>
+
+  <Config Name="FRIRSS_DATA_DIR"
+          Target="FRIRSS_DATA_DIR"
+          Default="/app/data"
+          Mode=""
+          Description="Internal FriRSS data directory."
+          Type="Variable"
+          Display="advanced"
+          Required="true"
+          Mask="false">/app/data</Config>
+
+  <Config Name="Timezone"
+          Target="TZ"
+          Default="Europe/Zurich"
+          Mode=""
+          Description="Container timezone, for example Europe/Zurich."
+          Type="Variable"
+          Display="always"
+          Required="false"
+          Mask="false">Europe/Zurich</Config>
+
+  <!-- Optional / advanced settings -->
+  <Config Name="Base URL"
+          Target="FRIRSS_BASE_URL"
+          Default=""
+          Mode=""
+          Description="Public URL of your FriRSS instance, for example https://rss.example.com."
+          Type="Variable"
+          Display="advanced"
+          Required="false"
+          Mask="false"></Config>
+
+  <Config Name="Redis URL"
+          Target="REDIS_URL"
+          Default=""
+          Mode=""
+          Description="Optional Redis connection URL for shared caching."
+          Type="Variable"
+          Display="advanced"
+          Required="false"
+          Mask="false"></Config>
+
+  <Config Name="Cache Sync Interval"
+          Target="CACHE_SYNC_INTERVAL"
+          Default="15"
+          Mode=""
+          Description="Redis cache synchronization interval."
+          Type="Variable"
+          Display="advanced"
+          Required="false"
+          Mask="false">15</Config>
+
+  <Config Name="Proxy Rewrites"
+          Target="PROXY_REWRITES"
+          Default=""
+          Mode=""
+          Description="Optional proxy rewrite configuration."
+          Type="Variable"
+          Display="advanced"
+          Required="false"
+          Mask="false"></Config>
+
+</Container>
